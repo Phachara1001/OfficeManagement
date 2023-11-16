@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+{% block content %}
+
+<div class="p-5 border border-light rounded shadow-sm ">
+    <h5>ข้อมูลยา</h5>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>ลำดับ</th>
+                <th>ชื่อยา</th>
+                <th>ประเภท</th>
+                <th>จำนวน</th>    
+                <th>วันหมดอายุ</th>
+                <th>ลบ</th>
+                <th>แก้ไข</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for i in drug %}
+            <tr>
+                <td>{{i.drug_id}}</td>
+                <td>{{i.drug_name}}</td>
+                <td>{{i.drug_type}}</td>
+                <td>{{i.drug_qty}}</td>
+                <td>{{i.drug_exp}}</td>
+                <th><a href="delete/{{i.drug_id}}" type="a" class="btn btn-outline-danger">ลบ</a></th>
+                <th><a href="edit/{{i.drug_id}}" type="a" class="btn btn-outline-warning">แก้ไข</a></th>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+
+{% endblock %}

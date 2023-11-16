@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>{% block title %}{% endblock %}</title>
+  {% load bootstrap5 %}
+  {% bootstrap_css %}
+  {% bootstrap_javascript %}
+</head>
+<body>
+    <nav class="navbar navbar-expand-sm navbar-dark bg-success">
+        <div class="container-fluid">
+          <a class="navbar-brand text-warning" href="/">ร้านยาหมออับดุล</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mynavbar">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="mynavbar">
+            <ul class="navbar-nav me-auto">
+              <li class="nav-item">
+                <a class="nav-link" href="/add_drug">เพิ่มยา</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/manage_drug">แก้ไขข้อมูลยา</a>
+              </li>
+            </ul>
+            <ul class="navbar-nav me-right">
+            <li class="nav-link">
+                <a class="nav-link" href="/login">เข้าสู่ระบบ</a>
+            </li>
+            <li class="nav-link dropdown">
+                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">เมนูอื่นๆ</a>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="/">หน้าหลัก</a></li>
+                  <li><a class="dropdown-item" href="/add_drug">เพิ่มยา</a></li>
+                  <li><a class="dropdown-item" href="/edit_drug">แก้ไขข้อมูลยา</a></li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+
+      <div class="container mt-5 p-5 rounded shadow border border-light">
+        {% block content %}
+        
+        {% endblock %}
+      </div>
+</body>
+</html>
